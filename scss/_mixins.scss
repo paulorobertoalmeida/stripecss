@@ -1,0 +1,22 @@
+//stripes: colores, animacion y estado
+@mixin strip {
+        @for $i from 1 through 5 {
+        $color: map-get($colors, color#{$i});    
+        &:nth-child(#{$i}) {
+            left: ($i - 1) * 20vw;   
+            background-color: $color;
+            animation: animation#{$i} 1s;   
+        }
+    }    
+}
+
+// Aqui empieza stripes 
+@mixin skew {    
+    transform-origin: center center;    
+    transform: skew(40deg) scaleY(1) translate(0, 0);
+    transition: all 2s cubic-bezier(0.23, 1, 0.32, 1);
+}
+@mixin skew-hover {    
+    transform: skew(0deg) scale(3) translate(0, 0);
+    opacity: 0.5;
+}

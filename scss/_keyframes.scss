@@ -1,0 +1,14 @@
+//Las Animaciones
+
+@for $i from 1 through 5 {  
+    $translation0: map-get($translates, translate0); 
+    $translation: map-get($translates, translate#{$i});  
+    @keyframes animation#{$i}  {
+        0% {
+            transform: $translation;
+        }
+        100% {
+            transform: $translation0;
+        }
+    }   
+}
